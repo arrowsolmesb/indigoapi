@@ -6,7 +6,7 @@
 	xsi:schemaLocation="
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
 	<flow name="indigoFlightsByUriParamsFlow" doc:id="5199f4d8-09a7-4aea-b29f-a7ed4679433f" >
-		<logger level="INFO" doc:name="Logger" doc:id="674b9cd9-33c3-43e1-9dc6-acfb17492abd" message="indigoFlightsFlow starts............."/>
+		<logger level="INFO" doc:name="Logger" doc:id="674b9cd9-33c3-43e1-9dc6-acfb17492abd" message="indigoFlightsByUriParamsFlow starts............."/>
 		<http:request method="GET" doc:name="Request" doc:id="f133642e-37df-4b23-8966-fd2dd581642a" config-ref="HTTP_Request_configuration" path="/api/getFlights">
 			<http:query-params ><![CDATA[#[output application/java
 ---

@@ -30,7 +30,20 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				</configuration>
+				<cloudHubDeployment>
+				      <uri>https://anypoint.mulesoft.com</uri>
+				      <username>mesb_03</username>
+				      <password>Welcome@01</password>
+				      <environment>DEV</environment>
+				      <applicationName>indigoapi-cloud</applicationName>
+				      <muleVersion>4.3.0</muleVersion>
+				      <workers>1</workers>
+				      <workerType>MICRO</workerType>
+				      <objectStoreV2>true</objectStoreV2>
+			   </cloudHubDeployment>
+				
+				<classifier>mule-application</classifier>
+                </configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -52,6 +65,12 @@
             <groupId>org.mule.modules</groupId>
             <artifactId>mule-apikit-module</artifactId>
             <version>1.4.1</version>
+            <classifier>mule-plugin</classifier>
+        </dependency>
+    	<dependency>
+            <groupId>org.mule.connectors</groupId>
+            <artifactId>mule-db-connector</artifactId>
+            <version>1.9.1</version>
             <classifier>mule-plugin</classifier>
         </dependency>
     </dependencies>

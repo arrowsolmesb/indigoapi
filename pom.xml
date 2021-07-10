@@ -30,7 +30,7 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				<cloudHubDeployment>
+			<!-- 	<cloudHubDeployment>
 				      <uri>https://anypoint.mulesoft.com</uri>
 				      <username>mesb_03</username>
 				      <password>Welcome@01</password>
@@ -40,10 +40,15 @@
 				      <workers>1</workers>
 				      <workerType>MICRO</workerType>
 				      <objectStoreV2>true</objectStoreV2>
-			   </cloudHubDeployment>
-				
+			   </cloudHubDeployment> -->
+				 <standaloneDeployment>
+				 	<applicationName>indigo</applicationName>
+         			<muleVersion>4.3.0</muleVersion>
+         			 <muleHome>D:\softwares\mule-enterprise-standalone-4.3.0</muleHome>
+				</standaloneDeployment>
 				<classifier>mule-application</classifier>
                 </configuration>
+               
 			</plugin>
 		</plugins>
 	</build>

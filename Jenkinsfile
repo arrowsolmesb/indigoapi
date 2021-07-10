@@ -7,9 +7,9 @@ pipeline {
 				bat 'mvn clean install'
 		  }
 		}
-		stage('Deploy Application into cloudhub') {
+		stage('Deploy Application into standalone') {
 		  steps {
-			  bat "mvn clean package deploy -DmuleDeploy"
+			  bat "mvn deploy -P standalone"
 		  }
 		}
 	}

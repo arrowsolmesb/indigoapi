@@ -3,7 +3,7 @@
     <http:listener-config name="indigoapi-httpListenerConfig">
         <http:listener-connection host="0.0.0.0" port="8081" />
     </http:listener-config>
-    <apikit:config name="indigoapi-config" api="resource::ebcf0966-7ac5-4359-b253-60e38907dbe6:indigoapi:1.0.0:raml:zip:indigoapi.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+    <apikit:config name="indigoapi-config" api="resource::ebcf0966-7ac5-4359-b253-60e38907dbe6:indigoapi:1.0.1:raml:zip:indigoapi.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
     <flow name="indigoapi-main">
         <http:listener config-ref="indigoapi-httpListenerConfig" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
@@ -124,6 +124,50 @@ output application/json
         </error-handler>
     </flow>
     <flow name="get:\indigoFlights:indigoapi-config">
+        <ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+[
+  {
+    airline: "Indigo",
+    flightCode: "IND101",
+    fromAirportCode: "HYD",
+    toAirportCode: "BANG",
+    departureDate: "30-Oct-2023",
+    emptySeats: 20,
+    totalSeats: 200,
+    price: 2999,
+    planeType: "Indigo 737"
+  }, 
+  {
+    airline: "Indigo",
+    flightCode: "IND102",
+    fromAirportCode: "HYD",
+    toAirportCode: "BANG",
+    departureDate: "30-Oct-2023",
+    emptySeats: 19,
+    totalSeats: 190,
+    price: 3999,
+    planeType: "Indigo 737"
+  }, 
+  {
+    airline: "Indigo",
+    flightCode: "IND103",
+    fromAirportCode: "HYD",
+    toAirportCode: "BANG",
+    departureDate: "30-Oct-2023",
+    emptySeats: 18,
+    totalSeats: 180,
+    price: 4999,
+    planeType: "Indigo 737"
+  }
+]]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+    </flow>
+    <flow name="get:\indigoAllFlights:indigoapi-config">
         <ee:transform>
             <ee:message>
                 <ee:set-payload><![CDATA[%dw 2.0

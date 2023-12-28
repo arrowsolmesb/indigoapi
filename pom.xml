@@ -30,6 +30,16 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+				 <cloudHubDeployment>
+                        <uri>https://anypoint.mulesoft.com</uri>
+                        <muleVersion>4.5.2:2e</muleVersion>
+                        <username>mesb_39</username>
+                        <password>Welcome@01</password>
+                        <applicationName>indigo-api</applicationName>
+                        <environment>Sandbox</environment>
+                        <workerType>MICRO</workerType>
+                        <objectStoreV2>true</objectStoreV2>
+                    </cloudHubDeployment>
 					<classifier>mule-application</classifier>
 				</configuration>
 			</plugin>

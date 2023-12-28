@@ -58,7 +58,7 @@
 		<dependency>
 			<groupId>ebcf0966-7ac5-4359-b253-60e38907dbe6</groupId>
 			<artifactId>indigoapi</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2</version>
 			<classifier>raml</classifier>
 			<type>zip</type>
 		</dependency>

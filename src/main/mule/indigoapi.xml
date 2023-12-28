@@ -124,7 +124,7 @@ output application/json
         </error-handler>
     </flow>
     <flow name="get:\indigoFlights:indigoapi-config">
-        <logger level="INFO" doc:name="Logger" doc:id="32d5d787-ac64-48c5-8569-1d8c2ca053e3" message="Request received: #[attributes.queryParams]"/>
+        <logger level="INFO" doc:name="Logger" doc:id="32d5d787-ac64-48c5-8569-1d8c2ca053e3" message="Inbound Request Logged: #[attributes.queryParams]"/>
 		<ee:transform>
             <ee:message>
                 <ee:set-payload><![CDATA[%dw 2.0

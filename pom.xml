@@ -39,6 +39,7 @@
                         <environment>Sandbox</environment>
                         <workerType>MICRO</workerType>
                         <objectStoreV2>true</objectStoreV2>
+                        <businessGroup>ABC</businessGroup>
                     </cloudHubDeployment>
 					<classifier>mule-application</classifier>
 				</configuration>
